@@ -3,6 +3,9 @@ import json
 
 
 class Player:
+    """The main player object controlling all player functions and attributes
+    """
+
     def __init__(
         self,
         name: str = '',
@@ -38,6 +41,12 @@ class Player:
 
 
 def get_players() -> list[Player]:
+    """Get a list of currently stored players
+
+    Returns:
+        list[Player]: Returns a list of players
+    """
+
     result = []
     directory = 'players'
 
@@ -62,6 +71,12 @@ def get_players() -> list[Player]:
 
 
 def list_players() -> str:
+    """Prints out a list of players
+
+    Returns:
+        str: Returns a formatted string that lists players
+    """
+
     result = '\nList of players:\n'
     players = get_players()
 
@@ -72,6 +87,11 @@ def list_players() -> str:
 
 
 def player_list_is_empty() -> bool:
+    """Determines whether the player list is empty or not.
+
+    Returns:
+        bool: Returns True if player list is empty, False if not.
+    """
 
     path = 'C:\\Users\\lupea\\Documents\\Projects\\Discord\\discord-chat-rpg\\players'
 

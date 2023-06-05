@@ -11,10 +11,23 @@ logger = Logger(os.environ.get('LOG_FILE'))
 
 
 def create_player() -> Player:
+    """Creates a new player.
+    Takes input for the player name.
+
+    Returns:
+        Player: Returns the resulting player object.
+    """
+
     today = datetime.now()
     time_occurred = today.strftime("%m/%d/%Y %H:%M:%S")
 
     def _get_name() -> str:
+        """Gets user input for the name of the new player.
+
+        Returns:
+            str: Returns the name that the user inputs.
+        """
+
         return input('Please enter a name: ')
 
     player = Player(_get_name())
@@ -31,6 +44,12 @@ def create_player() -> Player:
 
 
 def select_player() -> Player:
+    """Handles functionality to select an already created player.
+
+    Returns:
+        Player: Returns the selection.
+    """
+
     print(list_players())
 
     players = get_players()
@@ -99,6 +118,12 @@ def welcome_screen(player: Player | None = None) -> None:
 
 
 def game(player: Player) -> None:
+    """The main game loop
+
+    Args:
+        player (Player): The player object currently being used.
+    """
+
     print(f'Beginning the game as: {player.name}')
 
 
